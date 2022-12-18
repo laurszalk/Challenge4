@@ -6,6 +6,10 @@
   justify-content: center; /* this does nothing why? */
 }
 
+li {
+  list-style-type: none;
+  margin: 10px;
+}
 #btn-start {
   color: #fff;
   background-color: blueviolet;

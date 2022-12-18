@@ -5,9 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Game</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <main>
+      <nav id="timer">Time: 0</nav>
+      <header class="header">
+        <h1>Coding Quiz Game</h1>
+
+        <p>
+          Welcome to the coding quiz! Try to answer these questions correctly
+          within the time limit. Wrong answers will deduct points from your
+          score and 10 seconds from your remaining time. Good luck!
+        </p>
+        <button class="btn btn-lg" id="btn-start">Start</button>
+      </header>
+      <body>
+        <div class="card w-100">
+          <div class="card-body text-center">
+            <h5 class="card-title text-center">Question</h5>
+            <p class="card-text text-center">What does CSS stand for?</p>
+            <a href="#" class="btn btn-primary" id="btn-first"
+              >Cascading Style Sheets</a
+            >
+            <a href="#" class="btn btn-secondary" id="btn-second"
+              >Cascading Style Shortcuts</a
+            >
+            <a href="#" class="btn btn-success" id="btn-third"
+              >Cool Style Sheets</a
+            >
+            <a href="#" class="btn btn-danger" id="btn-fourth"
+              >Colorful Style Sheets</a
+            >
+          </div>
+        </div>
+      </body>
+    </main>
+
     <script src="./assets/script.js"></script>
   </body>
 </html>

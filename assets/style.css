@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  align-items: center;
+  justify-content: center; /* this does nothing why? */
+}
+
+#btn-start {
+  color: #fff;
+  background-color: blueviolet;
+}
+
+.card {
+  border-radius: 4px;
+}

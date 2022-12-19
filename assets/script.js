@@ -7,6 +7,7 @@ var timerEl = document.getElementById("timer");
 var scoreEl = document.getElementById("score");
 var hiddenQuestionEl = document.getElementById("hidden");
 var newQuestionEl = document.querySelector(".question-text");
+var buttonsEl = document.querySelectorAll(".btn");
 
 var questions = [
   {
@@ -41,16 +42,6 @@ var questions = [
   },
 ];
 
-// var score = 0;
-// for (var i = 0; i < questions.length; i++) {
-//   var response = questions[i].query;
-//   if (response === questions[i].correctAnswer) {
-//     score++;
-//   } else {
-//     score--;
-//   }
-// }
-
 var secondsLeft;
 
 startButtonEl.addEventListener("click", function (event) {
@@ -67,26 +58,34 @@ startButtonEl.addEventListener("click", function (event) {
   hiddenQuestionEl.hidden = false;
 });
 
-firstButtonEl.addEventListener("click", function (event) {
+buttonsEl.addEventListener("click", function (event) {
   newQuestionEl.textContent = questions[0].query;
-
-  //when you click the button add 10 points to the score
+  firstButtonEl.textContent = questions[0].answers[0];
+  secondButtonEl.textContent = questions[0].answers[1];
+  thirdButtonEl.textContent = questions[0].answers[2];
+  fourthButtonEl.textContent = questions[0].answers[3];
 });
 
-secondButtonEl.addEventListener("click", function (event) {
-  newQuestionEl.textContent = questions[0].query;
+// secondButtonEl.addEventListener("click", function (event) {
+//   newQuestionEl.textContent = questions[0].query;
+//   firstButtonEl.textContent = questions[0].answers[0];
+//   secondButtonEl.textContent = questions[0].answers[1];
+//   thirdButtonEl.textContent = questions[0].answers[2];
+//   fourthButtonEl.textContent = questions[0].answers[3];
+// });
 
-  //when you click this button deduct 10 points
-});
+// thirdButtonEl.addEventListener("click", function (event) {
+//   newQuestionEl.textContent = questions[0].query;
+//   firstButtonEl.textContent = questions[0].answers[0];
+//   secondButtonEl.textContent = questions[0].answers[1];
+//   thirdButtonEl.textContent = questions[0].answers[2];
+//   fourthButtonEl.textContent = questions[0].answers[3];
+// });
 
-thirdButtonEl.addEventListener("click", function (event) {
-  newQuestionEl.textContent = questions[0].query;
-
-  //when you click this button deduct 10 points
-});
-
-fourthButtonEl.addEventListener("click", function (event) {
-  newQuestionEl.textContent = questions[0].query;
-
-  //when you click this button deduct 10 points
-});
+// fourthButtonEl.addEventListener("click", function (event) {
+//   newQuestionEl.textContent = questions[0].query;
+//   firstButtonEl.textContent = questions[0].answers[0];
+//   secondButtonEl.textContent = questions[0].answers[1];
+//   thirdButtonEl.textContent = questions[0].answers[2];
+//   fourthButtonEl.textContent = questions[0].answers[3];
+// });

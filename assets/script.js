@@ -1,13 +1,13 @@
 var startButtonEl = document.getElementById("btn-start");
-var firstButtonEl = document.getElementById("btn-first");
-var secondButtonEl = document.getElementById("btn-second");
-var thirdButtonEl = document.getElementById("btn-third");
-var fourthButtonEl = document.getElementById("btn-fourth");
+// var firstButtonEl = document.getElementById("btn-first");
+// var secondButtonEl = document.getElementById("btn-second");
+// var thirdButtonEl = document.getElementById("btn-third");
+// var fourthButtonEl = document.getElementById("btn-fourth");
 var timerEl = document.getElementById("timer");
 var scoreEl = document.getElementById("score");
 var hiddenQuestionEl = document.getElementById("hidden");
 var newQuestionEl = document.querySelector(".question-text");
-var buttonsEl = document.querySelectorAll(".btn");
+// var buttonsEl = document.querySelectorAll(".btn");
 
 var questions = [
   {
@@ -17,6 +17,16 @@ var questions = [
       "Javascript",
       "Creating a repo",
       "None of the above",
+    ],
+    correctAnswer: "Debugging",
+  },
+  {
+    query: "What does CSS stand for?",
+    answers: [
+      "Cascading Style Sheets",
+      "Cascading Style Shortcuts",
+      "Class Style Selectors",
+      "Cool Style Sheets",
     ],
     correctAnswer: "Debugging",
   },
@@ -58,13 +68,26 @@ startButtonEl.addEventListener("click", function (event) {
   hiddenQuestionEl.hidden = false;
 });
 
-buttonsEl.addEventListener("click", function (event) {
+var buttons = document.createElement("button");
+buttons.appendChild;
+
+function createButtons() {
   newQuestionEl.textContent = questions[0].query;
   firstButtonEl.textContent = questions[0].answers[0];
   secondButtonEl.textContent = questions[0].answers[1];
   thirdButtonEl.textContent = questions[0].answers[2];
   fourthButtonEl.textContent = questions[0].answers[3];
-});
+}
+
+buttons.addEventListener("click", createButtons);
+
+// firstButtonEl.addEventListener("click", function (event) {
+//   newQuestionEl.textContent = questions[0].query;
+//   firstButtonEl.textContent = questions[0].answers[0];
+//   secondButtonEl.textContent = questions[0].answers[1];
+//   thirdButtonEl.textContent = questions[0].answers[2];
+//   fourthButtonEl.textContent = questions[0].answers[3];
+// });
 
 // secondButtonEl.addEventListener("click", function (event) {
 //   newQuestionEl.textContent = questions[0].query;

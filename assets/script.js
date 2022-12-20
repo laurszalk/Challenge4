@@ -6,8 +6,9 @@ var startButtonEl = document.getElementById("btn-start");
 var timerEl = document.getElementById("timer");
 var scoreEl = document.getElementById("score");
 var hiddenQuestionEl = document.getElementById("hidden");
-var newQuestionEl = document.querySelector(".question-text");
-// var buttonsEl = document.querySelectorAll(".btn");
+var questionText = document.querySelector(".question-text");
+var cardBody = document.querySelector("#card-body");
+var currentQuestion = 0;
 
 var questions = [
   {
@@ -65,50 +66,24 @@ startButtonEl.addEventListener("click", function (event) {
       clearInterval(secondsLeft);
     }
   }, 1000);
-  hiddenQuestionEl.hidden = false;
+  document.querySelector("#hidden").classList.remove("hidden");
+  newQuestions();
 });
 
-var buttons = document.createElement("button");
-buttons.appendChild;
+function newQuestions() {
+  questionText.textContent = questions[currentQuestion].query;
 
-function createButtons() {
-  newQuestionEl.textContent = questions[0].query;
-  firstButtonEl.textContent = questions[0].answers[0];
-  secondButtonEl.textContent = questions[0].answers[1];
-  thirdButtonEl.textContent = questions[0].answers[2];
-  fourthButtonEl.textContent = questions[0].answers[3];
+  //get answer options
+  for (var i = 0; i < questions[currentQuestion].answers.length; i++) {
+    var btnID = "btn-" + i;
+    document.getElementById(btnID).textContent =
+      questions[currentQuestion].answers[i];
+  }
 }
 
-buttons.addEventListener("click", createButtons);
-
-// firstButtonEl.addEventListener("click", function (event) {
-//   newQuestionEl.textContent = questions[0].query;
-//   firstButtonEl.textContent = questions[0].answers[0];
-//   secondButtonEl.textContent = questions[0].answers[1];
-//   thirdButtonEl.textContent = questions[0].answers[2];
-//   fourthButtonEl.textContent = questions[0].answers[3];
-// });
-
-// secondButtonEl.addEventListener("click", function (event) {
-//   newQuestionEl.textContent = questions[0].query;
-//   firstButtonEl.textContent = questions[0].answers[0];
-//   secondButtonEl.textContent = questions[0].answers[1];
-//   thirdButtonEl.textContent = questions[0].answers[2];
-//   fourthButtonEl.textContent = questions[0].answers[3];
-// });
-
-// thirdButtonEl.addEventListener("click", function (event) {
-//   newQuestionEl.textContent = questions[0].query;
-//   firstButtonEl.textContent = questions[0].answers[0];
-//   secondButtonEl.textContent = questions[0].answers[1];
-//   thirdButtonEl.textContent = questions[0].answers[2];
-//   fourthButtonEl.textContent = questions[0].answers[3];
-// });
-
-// fourthButtonEl.addEventListener("click", function (event) {
-//   newQuestionEl.textContent = questions[0].query;
-//   firstButtonEl.textContent = questions[0].answers[0];
-//   secondButtonEl.textContent = questions[0].answers[1];
-//   thirdButtonEl.textContent = questions[0].answers[2];
-//   fourthButtonEl.textContent = questions[0].answers[3];
-// });
+cardBody.addEventListener("click", function (e) {
+  console.log(e.target.textContent);
+  //compare right or wrong answer
+  currentQuestion++;
+  newQuestions();
+});

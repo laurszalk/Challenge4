@@ -3,13 +3,14 @@
   flex-direction: column;
   margin: 100px;
   align-items: center;
-  justify-content: center; /* this does nothing why? */
+  justify-content: center;
 }
 
 li {
   list-style-type: none;
   margin: 10px;
 }
+
 #btn-start {
   color: #fff;
   background-color: blueviolet;
@@ -17,4 +18,8 @@ li {
 
 .card {
   border-radius: 4px;
+}
+
+.hidden {
+  display: none;
 }

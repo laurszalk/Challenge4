@@ -20,6 +20,6 @@ li {
   border-radius: 4px;
 }
 
-.hidden {
+#hidden {
   display: none;
 }

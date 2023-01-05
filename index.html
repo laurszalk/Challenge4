@@ -17,7 +17,6 @@
     <main>
       <nav>
         <li id="timer">Time: 0</li>
-        <li id="score">Score: 0</li>
       </nav>
       <header class="header">
         <h1>Coding Quiz Game</h1>
@@ -30,7 +29,7 @@
         <button class="btn btn-lg" id="btn-start">Start</button>
       </header>
       <body>
-        <div class="card w-100" id="hidden" class="hidden">
+        <div class="card w-100 hidden" id="hidden">
           <div class="card-body text-center" id="card-body">
             <h5 class="card-title text-center">Question</h5>
             <p class="card-text text-center question-text">
@@ -51,6 +50,13 @@
             <button class="btn btn-danger" id="btn-3">Cool Style Sheets</button>
           </div>
         </div>
+        <div class="btn" id="user-input-box">
+          <form id="form">
+            <input type="text" placeholder="name" id="name" />
+            <button id="submit" class="btn btn-large">Submit</button>
+          </form>
+        </div>
+        <div id="score-box"></div>
       </body>
     </main>
 
